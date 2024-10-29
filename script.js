@@ -30,17 +30,17 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   window.open(whatsappURL, "_blank");
 });
 
-// Configuração de Partículas e Canvas
+// Configuração de Partículas no particle-layer
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
-document.getElementById("interactive-background").appendChild(canvas);
+document.getElementById("particle-layer").appendChild(canvas);
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let particles = [];
-const particleCount = 100; // Número de partículas
-const mouse = { x: null, y: null, radius: 100 }; // Raio de interação do mouse
+const particleCount = 100;
+const mouse = { x: null, y: null, radius: 100 };
 
 // Função para atualizar a posição do mouse
 window.addEventListener("mousemove", (event) => {
@@ -66,15 +66,12 @@ function createParticles() {
 function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   particles.forEach((particle) => {
-    // Movimento das partículas
     particle.x += particle.speedX;
     particle.y += particle.speedY;
 
-    // Reverter direção se a partícula sair do canvas
     if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
     if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
 
-    // Interatividade com o mouse
     const dx = mouse.x - particle.x;
     const dy = mouse.y - particle.y;
     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -82,17 +79,13 @@ function animateParticles() {
     if (distance < mouse.radius) {
       const angle = Math.atan2(dy, dx);
       const force = (mouse.radius - distance) / mouse.radius;
-      const moveX = Math.cos(angle) * force * 5;
-      const moveY = Math.sin(angle) * force * 5;
-
-      particle.x -= moveX;
-      particle.y -= moveY;
+      particle.x -= Math.cos(angle) * force * 5;
+      particle.y -= Math.sin(angle) * force * 5;
     }
 
-    // Desenhar as partículas com cor amarela
     ctx.beginPath();
     ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(255, 215, 0, 0.8)"; // Cor amarela (#ffd700)
+    ctx.fillStyle = "rgba(255, 215, 0, 0.8)"; // Cor amarela para as partículas
     ctx.fill();
   });
   requestAnimationFrame(animateParticles);

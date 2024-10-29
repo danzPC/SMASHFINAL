@@ -9,7 +9,9 @@
 </head>
 <body>
 
-  <div id="interactive-background"></div>
+    <!-- Camada de fundo interativo -->
+    <div id="interactive-background"></div>
+
     <!-- Navbar -->
     <header>
         <nav>
@@ -24,77 +26,84 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Transformamos Marcas em Sucesso Digital</h1>
-            <p>Alcance o próximo nível com estratégias digitais inovadoras e eficazes.</p>
-            <button onclick="scrollToSection('services')" class="btn-primary">Explorar Serviços</button>
+<!-- Hero Section -->
+<section class="hero">
+  <!-- Camada das partículas por cima do fundo de cimento queimado -->
+  <div id="particle-layer"></div>
+  
+  <!-- Conteúdo da hero -->
+  <div class="hero-content">
+      <h1>Transformamos Marcas em Sucesso Digital</h1>
+      <p>Alcance o próximo nível com estratégias digitais inovadoras e eficazes.</p>
+      <button onclick="scrollToSection('services')" class="btn-primary">Explorar Serviços</button>
+  </div>
+  
+  <!-- Gradiente de Transição -->
+  <div class="gradient-transition"></div>
+</section>
+
+
+    <!-- Sobre Nós Section -->
+    <section id="about" class="section about">
+        <div class="content">
+            <h2>Sobre Nós</h2>
+            <p>Nossa equipe é especializada em estratégias digitais, SEO, conteúdo e design para impulsionar o crescimento da sua marca online.</p>
         </div>
     </section>
 
-    <div class="blur-transition"></div>
+    <!-- Serviços Section -->
+    <section id="services" class="section services">
+        <div class="content">
+            <h2>Nossos Serviços</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <h3>Consultoria Digital</h3>
+                    <p>Estratégias inovadoras para elevar sua presença digital.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Marketing de Conteúdo</h3>
+                    <p>Conteúdo relevante e envolvente para atrair seu público.</p>
+                </div>
+                <div class="service-card">
+                    <h3>SEO & SEM</h3>
+                    <p>Otimização e estratégias para dominar os mecanismos de busca.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Gestão de Redes Sociais</h3>
+                    <p>Engajamento e crescimento autêntico nas redes sociais.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- About Section -->
-<section id="about" class="section about">
-  <div class="content">
-      <h2>Sobre Nós</h2>
-      <p>Nossa equipe é especializada em estratégias digitais, SEO, conteúdo e design para impulsionar o crescimento da sua marca online.</p>
-  </div>
-</section>
+    <!-- Portfólio Section -->
+    <section id="portfolio" class="section portfolio">
+        <div class="content">
+            <h2>Portfólio</h2>
+            <p>Projetos recentes que destacam nossa experiência em design e estratégia digital.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item"><div class="overlay">Projeto 1</div></div>
+                <div class="portfolio-item"><div class="overlay">Projeto 2</div></div>
+                <div class="portfolio-item"><div class="overlay">Projeto 3</div></div>
+                <div class="portfolio-item"><div class="overlay">Projeto 4</div></div>
+            </div>
+        </div>
+    </section>
 
-<!-- Services Section -->
-<section id="services" class="section services">
-  <div class="content">
-      <h2>Nossos Serviços</h2>
-      <div class="service-cards">
-          <div class="service-card">
-              <h3>Consultoria Digital</h3>
-              <p>Estratégias inovadoras para elevar sua presença digital.</p>
-          </div>
-          <div class="service-card">
-              <h3>Marketing de Conteúdo</h3>
-              <p>Conteúdo relevante e envolvente para atrair seu público.</p>
-          </div>
-          <div class="service-card">
-              <h3>SEO & SEM</h3>
-              <p>Otimização e estratégias para dominar os mecanismos de busca.</p>
-          </div>
-          <div class="service-card">
-              <h3>Gestão de Redes Sociais</h3>
-              <p>Engajamento e crescimento autêntico nas redes sociais.</p>
-          </div>
-      </div>
-  </div>
-</section>
+    <!-- Contato Section -->
+    <section id="contact" class="section contact">
+        <div class="contact-container">
+            <h2>Entre em Contato</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="E-mail" required>
+                <textarea id="message" placeholder="Mensagem"></textarea>
+                <button type="submit" class="btn-primary">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
 
-<!-- Portfolio Section -->
-<section id="portfolio" class="section portfolio">
-  <div class="content">
-      <h2>Portfólio</h2>
-      <p>Projetos recentes que destacam nossa experiência em design e estratégia digital.</p>
-      <div class="portfolio-grid">
-          <div class="portfolio-item"><div class="overlay">Projeto 1</div></div>
-          <div class="portfolio-item"><div class="overlay">Projeto 2</div></div>
-          <div class="portfolio-item"><div class="overlay">Projeto 3</div></div>
-          <div class="portfolio-item"><div class="overlay">Projeto 4</div></div>
-      </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="section contact">
-  <div class="contact-container">
-      <h2>Entre em Contato</h2>
-      <form id="contactForm">
-          <input type="text" id="name" placeholder="Nome" required>
-          <input type="email" id="email" placeholder="E-mail" required>
-          <textarea id="message" placeholder="Mensagem"></textarea>
-          <button type="submit" class="btn-primary">Enviar Mensagem</button>
-      </form>
-  </div>
-</section>
-
+    <!-- Script para partículas -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   background-color: #f9f9f9;
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -73,18 +74,39 @@ header nav {
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  background: 
-    linear-gradient(to bottom, rgba(17, 17, 17, 0.9) 70%, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0)), 
-    url('hero-bg.jpg') center center/cover;
+  position: relative;
+  background: url('images/cimento-queimado.jpg') center center/cover no-repeat;
   background-blend-mode: overlay;
+  background-color: rgba(17, 17, 17, 0.8);
+  overflow: hidden;
 }
 
-/* Transição com Blur */
-.blur-transition {
-  height: 50px; /* Altura do efeito de blur */
-  background: rgba(17, 17, 17, 0.7);
-  filter: blur(10px); /* Intensidade do desfoque */
-  margin-top: -25px; /* Sobrepõe o final da hero para uma transição suave */
+/* Camada de partículas */
+#particle-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Conteúdo da hero */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gradiente para a Transição */
+.gradient-transition {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px; /* Ajuste para aumentar ou diminuir a suavidade */
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 0.8) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 
@@ -112,23 +134,21 @@ header nav {
   background-color: #ffae00;
 }
 
-/* Seções */
-/* Estilos para Títulos e Estruturas Gerais */
-/* Fundo de cimento queimado nas seções */
+/* Estilo das outras seções */
 .section {
   padding: 80px 20px;
   background: url('images/cimento-queimado.jpg') center center/cover no-repeat;
-  background-attachment: fixed; /* Fixa o fundo para um efeito de parallax */
-  color: #fff; /* Cor do texto para contraste */
+  background-attachment: fixed;
+  color: #fff;
   text-align: center;
   background-blend-mode: overlay;
-  background-color: rgba(17, 17, 17, 0.8); /* Camada escura sobre o fundo */
+  background-color: rgba(17, 17, 17, 0.8);
 }
 
 /* Estilos de Títulos e Parágrafos das Seções */
 .section h2 {
   font-size: 2.5rem;
-  color: #ffd700; /* Amarelo harmonizando com as partículas e logo */
+  color: #ffd700;
   margin-bottom: 20px;
 }
 
@@ -139,10 +159,8 @@ header nav {
   margin: 0 auto 40px auto;
 }
 
-
 /* Estilo para a Seção 'About' */
 .about .content {
-  background: #fff;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -159,7 +177,6 @@ header nav {
 }
 
 .service-card {
-  background: #fff;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -174,12 +191,12 @@ header nav {
 
 .service-card h3 {
   font-size: 1.4rem;
-  color: #111;
+  color: #ffd700;
   margin-bottom: 10px;
 }
 
 .service-card p {
-  color: #666;
+  color: #ffffff;
 }
 
 /* Estilo para o Portfólio */
@@ -225,11 +242,10 @@ header nav {
 .contact {
   padding: 80px 20px;
   background: url('images/cimento-queimado.jpg') center center/cover no-repeat;
-  background-attachment: fixed; /* Fixa o fundo para um efeito de parallax */
-  color: #fff; /* Cor do texto para contraste */
+  color: #fff;
   text-align: center;
   background-blend-mode: overlay;
-  background-color: rgba(17, 17, 17, 0.8); /* Camada escura sobre o fundo */
+  background-color: rgba(17, 17, 17, 0.8);
 }
 
 .contact-container {
@@ -267,28 +283,4 @@ header nav {
 
 .contact-container button:hover {
   background-color: #333;
-}
-
-/* Background Interativo */
-#interactive-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-  background: #111; /* Cor de fundo base */
-}
-
-/* Ajustes no conteúdo para sobrepor o fundo */
-body, .section {
-  position: relative;
-  z-index: 1;
-}
-
-/* Transição Suave */
-.transition {
-  height: 100px; /* Altura da transição */
-  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.2), rgba(17, 17, 17, 0));
 }
