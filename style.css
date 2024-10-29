@@ -1,0 +1,294 @@
+/* Importando fonte e reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Navbar */
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 15px 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+.cta {
+  background-color: #ffd700;
+  color: #111;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #ffae00;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  background: 
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.9) 70%, rgba(17, 17, 17, 0.6), rgba(17, 17, 17, 0)), 
+    url('hero-bg.jpg') center center/cover;
+  background-blend-mode: overlay;
+}
+
+/* Transição com Blur */
+.blur-transition {
+  height: 50px; /* Altura do efeito de blur */
+  background: rgba(17, 17, 17, 0.7);
+  filter: blur(10px); /* Intensidade do desfoque */
+  margin-top: -25px; /* Sobrepõe o final da hero para uma transição suave */
+}
+
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background-color: #ffd700;
+  color: #111;
+  padding: 12px 25px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #ffae00;
+}
+
+/* Seções */
+/* Estilos para Títulos e Estruturas Gerais */
+/* Fundo de cimento queimado nas seções */
+.section {
+  padding: 80px 20px;
+  background: url('images/cimento-queimado.jpg') center center/cover no-repeat;
+  background-attachment: fixed; /* Fixa o fundo para um efeito de parallax */
+  color: #fff; /* Cor do texto para contraste */
+  text-align: center;
+  background-blend-mode: overlay;
+  background-color: rgba(17, 17, 17, 0.8); /* Camada escura sobre o fundo */
+}
+
+/* Estilos de Títulos e Parágrafos das Seções */
+.section h2 {
+  font-size: 2.5rem;
+  color: #ffd700; /* Amarelo harmonizando com as partículas e logo */
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+}
+
+
+/* Estilo para a Seção 'About' */
+.about .content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilo para os Cartões de Serviço */
+.services .service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #666;
+}
+
+/* Estilo para o Portfólio */
+.portfolio .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-item {
+  background-color: #ddd;
+  height: 250px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Estilos para o Contato */
+.contact {
+  padding: 80px 20px;
+  background: url('images/cimento-queimado.jpg') center center/cover no-repeat;
+  background-attachment: fixed; /* Fixa o fundo para um efeito de parallax */
+  color: #fff; /* Cor do texto para contraste */
+  text-align: center;
+  background-blend-mode: overlay;
+  background-color: rgba(17, 17, 17, 0.8); /* Camada escura sobre o fundo */
+}
+
+.contact-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+  color: #ffd700;
+}
+
+.contact-container input, 
+.contact-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.contact-container button {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffd700;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-container button:hover {
+  background-color: #333;
+}
+
+/* Background Interativo */
+#interactive-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: #111; /* Cor de fundo base */
+}
+
+/* Ajustes no conteúdo para sobrepor o fundo */
+body, .section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Transição Suave */
+.transition {
+  height: 100px; /* Altura da transição */
+  background: linear-gradient(to bottom, rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.2), rgba(17, 17, 17, 0));
+}
