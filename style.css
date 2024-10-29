@@ -1,4 +1,4 @@
-/* Importando fonte e reset básico */
+/* Reset básico e fonte */
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +8,19 @@
 body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
-  background-color: #f9f9f9;
+  background: url('images/cimento-queimado1.jpg') center center / cover no-repeat fixed;
   overflow-x: hidden;
 }
 
-/* Navbar */
+/* Fundo específico para about.html */
+body.about {
+  background: url('images/cimento-queimado.jpg') center center / cover no-repeat fixed;
+  background-blend-mode: overlay;
+  background-color: rgba(17, 17, 17, 0.8);
+}
+
+/* Header */
 header {
-  background-color: #111;
   color: #fff;
   padding: 15px 50px;
   position: fixed;
@@ -29,10 +35,21 @@ header nav {
   align-items: center;
 }
 
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
   font-weight: 700;
   font-size: 1.5rem;
   color: #ffd700;
+}
+
+.logo a {
+  color: #ffd700;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -65,7 +82,7 @@ header nav {
   background-color: #ffae00;
 }
 
-/* Hero Section */
+/* Hero Section específica para index.html */
 .hero {
   height: 100vh;
   color: #fff;
@@ -75,40 +92,10 @@ header nav {
   text-align: center;
   padding: 0 20px;
   position: relative;
-  background: url('images/cimento-queimado.jpg') center center/cover no-repeat;
+  background: url('images/cimento-queimado1.jpg') center center/cover no-repeat; /* Imagem de fundo exclusiva */
   background-blend-mode: overlay;
   background-color: rgba(17, 17, 17, 0.8);
-  overflow: hidden;
 }
-
-/* Camada de partículas */
-#particle-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Conteúdo da hero */
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-/* Gradiente para a Transição */
-.gradient-transition {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px; /* Ajuste para aumentar ou diminuir a suavidade */
-  background: linear-gradient(to bottom, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 0.8) 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
 
 .hero-content h1 {
   font-size: 3.5rem;
@@ -134,18 +121,39 @@ header nav {
   background-color: #ffae00;
 }
 
-/* Estilo das outras seções */
-.section {
-  padding: 80px 20px;
-  background: url('images/cimento-queimado.jpg') center center/cover no-repeat;
-  background-attachment: fixed;
-  color: #fff;
-  text-align: center;
-  background-blend-mode: overlay;
-  background-color: rgba(17, 17, 17, 0.8);
+.logo a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-/* Estilos de Títulos e Parágrafos das Seções */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+/* Ajuste para seções internas, removendo qualquer fundo adicional */
+.section {
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+  background: none; /* Remove fundo duplicado nas seções */
+}
+
+/* Outros ajustes de estilo */
 .section h2 {
   font-size: 2.5rem;
   color: #ffd700;
@@ -159,16 +167,7 @@ header nav {
   margin: 0 auto 40px auto;
 }
 
-/* Estilo para a Seção 'About' */
-.about .content {
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Estilo para os Cartões de Serviço */
+/* Estilos dos Cartões de Serviço */
 .services .service-cards {
   display: flex;
   flex-wrap: wrap;
@@ -177,12 +176,13 @@ header nav {
 }
 
 .service-card {
+  background-color: #333;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 280px;
-  transition: transform 0.3s ease;
   text-align: left;
+  transition: transform 0.3s ease;
+  color: #fff;
 }
 
 .service-card:hover {
@@ -195,28 +195,29 @@ header nav {
   margin-bottom: 10px;
 }
 
-.service-card p {
-  color: #ffffff;
-}
-
-/* Estilo para o Portfólio */
+/* Estilo do Portfólio com layout em linha */
 .portfolio .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  display: flex;
+  justify-content: space-between; /* Distribui o espaço entre os itens */
+  gap: 20px; /* Espaçamento entre os itens */
+  flex-wrap: nowrap; /* Garante que os itens fiquem lado a lado */
+  padding: 20px 0;
+  overflow: hidden; /* Remove a rolagem horizontal */
 }
 
 .portfolio-item {
+  flex: 1; /* Cada item ocupa proporcionalmente o espaço disponível */
+  min-width: 100px; /* Largura mínima para evitar distorção em telas menores */
   background-color: #ddd;
   height: 250px;
-  border-radius: 8px;
+  border-radius: 15px;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
 }
 
 .portfolio-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
 }
 
 .portfolio-item .overlay {
@@ -238,27 +239,30 @@ header nav {
   opacity: 1;
 }
 
-/* Seção de Contato e Rodapé */
+
+/* Seção de Contato e Footer */
 .contact-footer {
   color: #fff;
   padding: 40px 20px;
   text-align: center;
+  margin-top: auto; /* Empurra o footer para o final da página */
 }
 
-.contact-container {
+.contact-footer h2 {
+  color: #ffd700;
+  margin-bottom: 20px;
+}
+
+.contact-footer form {
   max-width: 500px;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: none; /* Remove sombra do formulário */
 }
 
-.contact-container h2 {
-  color: #ffd700;
-}
-
-.contact-container input,
-.contact-container textarea {
+.contact-footer input,
+.contact-footer textarea {
   width: 100%;
   padding: 15px;
   margin: 10px 0;
@@ -268,7 +272,7 @@ header nav {
   color: #fff;
 }
 
-.contact-container button {
+.contact-footer button {
   width: 100%;
   padding: 15px;
   background-color: #ffd700;
@@ -278,26 +282,18 @@ header nav {
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  margin-top: 40px;
-}
-
-.footer-socials h4,
-.footer-contact-info h4 {
-  font-size: 1.2rem;
-  color: #ffd700;
-  margin-bottom: 10px;
+.contact-footer button:hover {
+  background-color: #ffae00;
 }
 
 .social-links {
   display: flex;
+  justify-content: center;
   gap: 15px;
+  margin: 20px 0;
 }
 
 .social-links a {
@@ -307,17 +303,28 @@ header nav {
   transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-  color: #ffd700;
-}
-
-.footer-contact-info p {
-  font-size: 0.9rem;
-  color: #bbb;
-}
-
 .footer-bottom {
   margin-top: 20px;
   font-size: 0.8rem;
   color: #777;
+}
+
+
+/* Animação de entrada de cima para baixo */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe que ativa a animação ao carregar os elementos */
+.slide-in {
+  opacity: 0; /* Elementos começam invisíveis */
+  animation: slideDown 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
