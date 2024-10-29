@@ -3,12 +3,7 @@ function scrollToSection(sectionId) {
   document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
 }
 
-// Formulário de contato
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  alert("Obrigado por entrar em contato! Responderemos em breve.");
-});
-// Função para enviar mensagem via WhatsApp
+// Formulário de contato e redirecionamento para WhatsApp
 document.getElementById("contactForm").addEventListener("submit", function(event) {
   event.preventDefault();
   
@@ -28,7 +23,11 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
   // Redirecionamento para o WhatsApp
   window.open(whatsappURL, "_blank");
+  
+  // Exibe mensagem de agradecimento no site
+  alert("Obrigado por entrar em contato! Você será redirecionado para o WhatsApp.");
 });
+
 
 // Configuração de Partículas no particle-layer
 const canvas = document.createElement("canvas");

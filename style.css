@@ -238,49 +238,86 @@ header nav {
   opacity: 1;
 }
 
-/* Estilos para o Contato */
-.contact {
-  padding: 80px 20px;
-  background: url('images/cimento-queimado.jpg') center center/cover no-repeat;
+/* Seção de Contato e Rodapé */
+.contact-footer {
   color: #fff;
+  padding: 40px 20px;
   text-align: center;
-  background-blend-mode: overlay;
-  background-color: rgba(17, 17, 17, 0.8);
 }
 
 .contact-container {
   max-width: 500px;
-  margin: 0 auto;
-  padding: 40px;
+  margin: 0 auto 40px;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .contact-container h2 {
   color: #ffd700;
 }
 
-.contact-container input, 
+.contact-container input,
 .contact-container textarea {
   width: 100%;
   padding: 15px;
   margin: 10px 0;
   border-radius: 5px;
   border: 1px solid #ddd;
+  background-color: #333;
+  color: #fff;
 }
 
 .contact-container button {
   width: 100%;
   padding: 15px;
   background-color: #ffd700;
-  color: #fff;
+  color: #111;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.contact-container button:hover {
-  background-color: #333;
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.footer-socials h4,
+.footer-contact-info h4 {
+  font-size: 1.2rem;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffd700;
+}
+
+.footer-contact-info p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #777;
 }
